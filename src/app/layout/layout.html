@@ -1,0 +1,88 @@
+<div class="d-flex">
+
+  <!-- Sidebar (Always fixed on the left) -->
+  <div class="sidebar-container bg-dark d-flex flex-column"
+       style="width: 250px; min-height: 100vh;">
+
+      <div class="sidebar-header p-4 border-bottom border-secondary text-center">
+          <h4 class="text-white fw-bold mb-0">
+              <img src="/logo.png" width="50" height="50"> Creatify <span class="text-primary">AI</span>
+          </h4>
+      </div>
+
+      <div class="flex-grow-1 py-3">
+          <ul class="nav flex-column">
+
+              <li class="nav-item">
+                  <a class="nav-link text-white sidebar-link"
+                     routerLink="/ai/dashboard"
+                     routerLinkActive="active">
+                      <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link text-white sidebar-link"
+                     routerLink="/ai/article"
+                     routerLinkActive="active">
+                      <i class="fas fa-pen-nib me-2"></i> Write Article
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link text-white sidebar-link"
+                     routerLink="/blog-title"
+                     routerLinkActive="active">
+                      <i class="fas fa-heading me-2"></i> Blog Title
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link text-white sidebar-link"
+                     routerLink="/removeObject"
+                     routerLinkActive="active">
+                      <i class="fas fa-tools me-2"></i> Remove Object
+                  </a>
+              </li>
+
+          </ul>
+      </div>
+
+      <div class="p-3 border-top border-secondary">
+          <div class="d-flex justify-content-between align-items-center">
+
+              <div class="d-flex align-items-center me-2">
+                  <img width="40" height="40"
+                       src="https://tse1.mm.bing.net/th/id/OIP.rcmXeqCUOiCg54dfU4v9tgHaHa?pid=Api&P=0&h=180"
+                       class="rounded-circle me-3">
+
+                  <div>
+                      <p class="text-white fw-bold mb-0 small text-truncate">John Creator</p>
+                      <span class="badge bg-primary-subtle text-primary">Pro Plan</span>
+                  </div>
+              </div>
+
+              <button class="btn btn-outline-secondary btn-sm">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+
+          </div>
+      </div>
+
+  </div>
+
+
+  <!-- Main Content Section -->
+  <div class="content-area flex-grow-1">
+      
+      <div class="header p-3 shadow-sm d-flex justify-content-between align-items-center">
+          <h5 class="m-0">My Dashboard</h5>
+      </div>
+
+      <div class="p-4">
+          <router-outlet></router-outlet>
+      </div>
+
+  </div>
+
+</div>

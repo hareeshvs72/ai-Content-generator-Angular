@@ -1,0 +1,29 @@
+/* Ensure the sidebar container dictates its own dimensions */
+.sidebar-container {
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* Styling for all navigation links */
+.sidebar-link {
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+/* Styling for the currently active link */
+.sidebar-link.active {
+    background-color: #0d6efd; /* Bootstrap Primary Blue */
+    color: #ffffff !important;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 10px; /* Optional: adds a small inset for the active state */
+}
+
+/* Ensure the user name doesn't overflow */
+.text-truncate {
+    max-width: 100px;
+}

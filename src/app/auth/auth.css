@@ -1,0 +1,35 @@
+/* Custom Styles for Auth Forms */
+
+/* Page Background */
+.auth-page {
+    background-color: #f0f2f5; /* Light grey background */
+}
+
+/* Card Styling */
+.auth-card {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Button Styling */
+.auth-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Input Focus Border Color (Matches primary blue) */
+.form-control:focus {
+    border-color: #0d6efd; /* Bootstrap primary color */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Enhancing the primary link color */
+a {
+    color: #0d6efd;
+}
+
+a:hover {
+    color: #0b5ed7; /* Slightly darker blue on hover */
+}
