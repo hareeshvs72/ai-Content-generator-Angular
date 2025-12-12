@@ -15,6 +15,8 @@
                     <input formControlName="email"  type="email" class="form-control" id="email" 
                            placeholder="you@example.com" required 
                           >
+                          @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) { <p class="text-danger" style="font-size: 12px;margin-top: 3px;">Invalid Email</p>}
+                         
                 </div>
 
                 <div class="mb-4">
@@ -25,14 +27,15 @@
                     <input formControlName="password" type="password" class="form-control" id="password" 
                            placeholder="••••••••" required 
                            >
+                             @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) { <p class="text-danger" style="font-size: 12px;margin-top: 3px;">Invalid Password</p>}
                 </div>
 
-                <div class="form-check mb-4">
+                <!-- <div class="form-check mb-4">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">
                         Remember Me
                     </label>
-                </div>
+                </div> -->
 
                 <div class="d-grid gap-2 mb-3">
                     <button type="submit" class="btn btn-primary btn-lg auth-btn">
@@ -66,6 +69,7 @@
                     <input formControlName="username" type="text" class="form-control" id="name" 
                            placeholder="John Doe" required 
                             >
+                              @if (registeForm.get('username')?.invalid && registeForm.get('username')?.touched) { <p class="text-danger" style="font-size: 12px;margin-top: 3px;">Invalid username</p>}
                 </div>
                 
                 <div class="mb-3">
@@ -73,6 +77,7 @@
                     <input formControlName="email" type="email" class="form-control" id="email" 
                            placeholder="you@example.com" required 
                             >
+                              @if (registeForm.get('email')?.invalid && registeForm.get('email')?.touched) { <p class="text-danger" style="font-size: 12px;margin-top: 3px;">Invalid Email</p>}
                 </div>
 
                 <div class="mb-4">
@@ -80,6 +85,7 @@
                     <input formControlName="password" type="password" class="form-control" id="password" 
                            placeholder="min. 8 characters" required 
                            >
+                             @if (registeForm.get('password')?.invalid && registeForm.get('password')?.touched) { <p class="text-danger" style="font-size: 12px;margin-top: 3px;">Invalid password</p>}
                 </div>
 
                 <div class="d-grid gap-2 mb-3">
@@ -90,7 +96,7 @@
 
                 <p class="text-center small mt-3 text-muted">
                     By clicking "Sign Up", you agree to our 
-                    <a href="#" class="text-decoration-none">Terms and Conditions</a>.
+                    <a  class="text-decoration-none">Terms and Conditions</a>.
                 </p>
 
                 

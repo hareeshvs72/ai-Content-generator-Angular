@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,4 +9,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './layout.html',
   styleUrls: ['./layout.css'],
 })
-export class Layout {}
+export class Layout {
+  router = inject(Router)
+
+  logOut(){
+    sessionStorage.clear()
+    this.router.navigateByUrl('/')
+  }
+
+}

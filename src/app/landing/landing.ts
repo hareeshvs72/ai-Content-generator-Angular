@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class Landing {
   router = inject(Router)
+  token:boolean = false
+  platformId = inject(PLATFORM_ID)
  aiToolCard:any = [
   {
     title: "AI Article Writer",
@@ -50,7 +52,28 @@ export class Landing {
   }
 ];
 
+ngOnInit(){
+this.getToken()
+}
 
+getToken(){
+  if(isPlatformBrowser(this.platformId)){
+ const tokens = sessionStorage.getItem("token") 
+if(tokens){
+ this.token = true
+}
+  }
+
+}
+
+navigateDashbord(){
+  if(this.token){
+    this.router.navigateByUrl('/ai/dashboard')
+  }
+  else{
+     this.router.navigateByUrl('/auth')
+  }
+}
 
 navigateToLogin(){
   this.router.navigateByUrl('/auth')

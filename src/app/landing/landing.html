@@ -10,9 +10,15 @@
 
         <!-- right side login -->
         <div>
+          @if (!token) {
             <button (click)="navigateToLogin()" class="btn btn-primary rounded-5 py-2 px-4">
                 Get Started <i class="fa-solid fa-arrow-right"></i>
             </button>
+          }
+          @else {
+            <img width="40px" height="40px" class="mx-md-5" style="border-radius: 50%;" src="https://tse1.mm.bing.net/th/id/OIP.jQc294WED8p75DlIKBgMNAHaE8?pid=Api&P=0&h=180" alt="logo">
+          }
+            
         </div>
     </div>
 
@@ -24,7 +30,7 @@
                 Boost your productivity with <span class="title">AI tools</span> trusted by creators worldwide.
             </h5>
             <div class="d-flex align-items-center justify-content-center flex-column">
-                <button class="btn btn-primary px-4 mt-3">Get Started</button>
+                <button type="button" (click)="navigateDashbord()" class="btn btn-primary px-4 mt-3">Get Started</button>
             </div>
         </div>
     </div>
