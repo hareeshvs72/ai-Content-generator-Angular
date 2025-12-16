@@ -1,0 +1,8 @@
+.article-text {
+  margin: 0;                /* 🔥 removes default margins */
+  white-space: pre-wrap;
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
