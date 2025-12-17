@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Layout {
   router = inject(Router)
-
+  isSidebarOpen = false;
   logOut(){
     sessionStorage.clear()
     this.router.navigateByUrl('/')

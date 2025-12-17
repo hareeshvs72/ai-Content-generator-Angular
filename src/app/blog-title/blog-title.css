@@ -1,8 +1,96 @@
-.blog-text{
+/* .blog-text{
   margin: 0;              
   white-space: pre-wrap;
   font-family: system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.8;
   text-align: justify;
+} */
+
+/* Page background */
+.ai-bg {
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+}
+
+/* Card */
+.ai-card {
+  background: #ffffff;
+  border: none;
+}
+
+/* Title */
+.ai-title {
+  color: #4f46e5; /* Indigo */
+}
+
+/* Input */
+.ai-input {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.ai-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.15rem rgba(99, 102, 241, 0.25);
+}
+
+/* Category pill */
+.ai-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-pill:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+.ai-pill.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Button */
+.ai-btn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  border: none;
+}
+
+.ai-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+/* Output card */
+.ai-output-card {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Output title */
+.ai-output-title {
+  color: #a5b4fc;
+}
+
+/* Generated text */
+.blog-text {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 12px;
+  max-height: 420px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+/* Empty state */
+.empty-icon {
+  font-size: 48px;
 }

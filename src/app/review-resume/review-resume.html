@@ -1,35 +1,78 @@
-<div class="container-fluid ">
-    <div class="row">
-        <!-- left -->
+<div class="container-fluid sky-bg min-vh-100 py-5">
+  <div class="row justify-content-center g-4">
 
-        <div class="col-md-6">
-            <form action="" class="card shadow p-4">
-                <div>
-                    <h3 class="text-primary fw-bold mb-5">Resume Reviewer</h3>
-                </div>
-                <div>
-                    <label class="fw-semibold" for="article">Upload Resume</label>
-                    <input id="article" type="file" class="form-control my-2" accept="application/pdf"
-                        placeholder="Search For Your Blog  Title" required>
-                </div>
+    <!-- LEFT : INPUT -->
+    <div class="col-md-5">
+      <form class="card sky-card shadow-sm p-4 rounded-4 h-100">
 
-                <p style="font-size: 12px;" class="fw-light text-secondary">Support PDF Formats Only</p>
+        <h3 class="fw-bold sky-title mb-4">
+          ✂️ AI Object Removal
+        </h3>
 
+        <!-- Upload -->
+        <div class="mb-4">
+          <label class="fw-semibold sky-label mb-2">
+            Upload an image
+          </label>
 
-                <button class="btn btn-primary my-4"><i class="fa-solid  fa-file-lines mx-2"></i>Review Resume</button>
-            </form>
+          <input
+            type="file"
+            class="form-control sky-input"
+            accept="image/*"
+            required
+          />
+
+          <small class="text-muted">
+            JPG, PNG, WebP supported
+          </small>
         </div>
-        <!-- right -->
-        <div class="col-md-6">
-            <div class="card shadow p-5" style="max-height: 600px; height: 100%;">
 
-                <h4 class="text-primary"><i class="fa-solid fa-hashtag mx-2"></i>Analyse Result</h4>
-                <div class="d-flex align-items-center justify-content-center flex-column h-100">
-                 <i class="fa-solid  fa-file-lines mx-2 fs-1 text-secondary"></i>
-                    <p class="my-3 fw-semibold text-secondary">Upload An Image and Click " Remove Object " to Get
-                        Started</p>
-                </div>
-            </div>
+        <!-- Description -->
+        <div class="mb-4">
+          <label class="fw-semibold sky-label mb-2">
+            Object to remove
+          </label>
+
+          <textarea
+            rows="4"
+            class="form-control sky-input"
+            placeholder="Example: remove the person standing behind the car"
+            required
+          ></textarea>
         </div>
+
+        <!-- Button -->
+        <button
+          type="button"
+          class="btn sky-btn w-100 py-2 fw-semibold rounded-3"
+        >
+          <i class="fa-solid fa-scissors me-2"></i>
+          Remove Object
+        </button>
+
+      </form>
     </div>
+
+    <!-- RIGHT : OUTPUT -->
+    <div class="col-md-5">
+      <div class="card sky-output-card shadow-sm p-4 rounded-4 h-100">
+
+        <h4 class="fw-semibold sky-output-title mb-4">
+          🖼️ Processed Image
+        </h4>
+
+        <div class="d-flex align-items-center justify-content-center flex-column h-100 text-center">
+          <div class="sky-icon mb-3">
+            ✂️
+          </div>
+          <p class="fw-semibold text-muted">
+            Upload an image and describe the object.<br>
+            The AI will remove it cleanly for you.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </div>

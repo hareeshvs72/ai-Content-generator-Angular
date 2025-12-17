@@ -43,5 +43,13 @@ export class Api {
     return this.http.post(`${this.serverUrl}/ai/blogtitlegenerator`, reqBody, this.appendToken())
   }
 
+   imageGeneratorAPI(reqBody: any) {
+    return this.http.post(`${this.serverUrl}/ai/textoimage`, reqBody, this.appendToken())
+  }
+
+   removeBackgroundApi(reqBody: any) {
+    return this.http.post(`${this.serverUrl}/ai/remove-background`, reqBody, this.appendToken())
+  }
+
 
 }

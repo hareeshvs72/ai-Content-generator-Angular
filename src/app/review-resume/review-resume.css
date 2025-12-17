@@ -1,0 +1,81 @@
+/* ===============================
+   BACKGROUND
+================================ */
+.sky-bg {
+  background: linear-gradient(135deg, #f8fbff, #eef6ff);
+}
+
+/* ===============================
+   CARDS
+================================ */
+.sky-card {
+  background: #ffffff;
+  border: 1px solid #e5edff;
+}
+
+.sky-output-card {
+  background: #ffffff;
+  border: 1px dashed #dbeafe;
+}
+
+/* ===============================
+   TITLES
+================================ */
+.sky-title {
+  color: #2563eb; /* blue */
+}
+
+.sky-output-title {
+  color: #1d4ed8;
+}
+
+/* ===============================
+   LABELS
+================================ */
+.sky-label {
+  color: #334155;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.sky-input {
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+}
+
+.sky-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.2);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.sky-btn {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: #ffffff;
+  border: none;
+}
+
+.sky-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+}
+
+/* ===============================
+   EMPTY STATE ICON
+================================ */
+.sky-icon {
+  font-size: 46px;
+  opacity: 0.7;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .sky-title,
+  .sky-output-title {
+    text-align: center;
+  }
+}

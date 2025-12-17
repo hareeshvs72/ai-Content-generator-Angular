@@ -1,35 +1,76 @@
+<div class="container-fluid object-bg min-vh-100 py-5">
+  <div class="row justify-content-center g-4">
 
-<div class="container-fluid ">
-   <div class="row">
-      <!-- left -->
+    <!-- LEFT : INPUT -->
+    <div class="col-md-5">
+      <form class="card object-card shadow-lg p-4 rounded-4 h-100">
+        
+        <h3 class="fw-bold object-title mb-4">
+          ✂️ AI Object Removal
+        </h3>
 
-    <div class="col-md-6">
-      <form action="" class="card shadow p-4">
-        <div>
-          <h3 class="text-primary fw-bold mb-5">Object  Removal</h3>
+        <!-- Upload -->
+        <div class="mb-4">
+          <label class="fw-semibold text-muted mb-2">
+            Upload an image
+          </label>
+
+          <input
+            type="file"
+            class="form-control object-file-input"
+            accept="image/*"
+            required
+          />
+
+          <small class="text-secondary">
+            JPG, PNG, WebP supported
+          </small>
         </div>
-           <div>
-               <label class="fw-semibold" for="article">Upload Image</label>
-               <input id="article" type="file" class="form-control my-2"  accept="image/*" placeholder="Search For Your Blog  Title" required>
-           </div>
-             <div>
-               <label class="fw-semibold" for="article">Descibe Object Name To Remove</label>
-           <textarea rows="4" id="article" type="text" class="form-control my-2"  placeholder="Describe What You Want To See In The Image" required></textarea>
-           </div>
-          
-           <button  class="btn btn-primary my-4"><i class="fa-solid fa-scissors mx-2"></i>Remove Object</button>
+
+        <!-- Description -->
+        <div class="mb-4">
+          <label class="fw-semibold text-muted mb-2">
+            Object to remove
+          </label>
+
+          <textarea
+            rows="4"
+            class="form-control object-input"
+            placeholder="Example: remove the person standing behind the car"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Button -->
+        <button
+          type="button"
+          class="btn object-btn w-100 py-2 fw-semibold rounded-3"
+        >
+          <i class="fa-solid fa-scissors me-2"></i>
+          Remove Object
+        </button>
+
       </form>
     </div>
-    <!-- right -->
-    <div class="col-md-6">
-      <div class="card shadow p-5" style="max-height: 600px; height: 100%;">
 
-           <h4  class="text-primary"><i class="fa-solid fa-hashtag mx-2"></i>Processed Image</h4>
-               <div class="d-flex align-items-center justify-content-center flex-column h-100">
-                      <i  class="fa-solid fa-scissors mx-2 fs-1 text-secondary"></i>
-                      <p class="my-3 fw-semibold text-secondary">Upload An Image and Click " Remove Object " to Get Started</p>
-               </div>
+    <!-- RIGHT : OUTPUT -->
+    <div class="col-md-5">
+      <div class="card object-output-card shadow-lg p-4 rounded-4 h-100">
+
+        <h4 class="fw-semibold object-output-title mb-4">
+          🖼️ Processed Image
+        </h4>
+
+        <div class="empty-state d-flex align-items-center justify-content-center flex-column h-100 text-center">
+          <div class="empty-icon mb-3">✂️</div>
+          <p class="fw-semibold text-secondary">
+            Upload an image and describe the object you want to remove.<br>
+            The AI will handle the rest.
+          </p>
+        </div>
+
       </div>
     </div>
-   </div>
+
+  </div>
 </div>

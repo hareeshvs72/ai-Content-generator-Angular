@@ -1,108 +1,139 @@
 <div class="d-flex">
 
-  <!-- Sidebar (Always fixed on the left) -->
-  <div class="sidebar-container bg-dark d-flex flex-column"
-       style="min-width: 250px; min-height: 100vh;">
+  <!-- SIDEBAR -->
+  <div
+    class="sidebar-container bg-dark d-flex flex-column"
+    [class.open]="isSidebarOpen"
+  >
 
-      <div class="sidebar-header p-4 border-bottom border-secondary text-center">
-          <h4 class="text-white fw-bold mb-0">
-              <img src="/logo.png" width="50" height="50"> Creatify <span class="text-primary">AI</span>
-          </h4>
-      </div>
+    <!-- Logo -->
+    <div class="sidebar-header p-4 border-bottom border-secondary text-center">
+      <h4 class="text-white fw-bold mb-0">
+        <img src="/logo.png" width="45" height="45" class="me-2">
+        Creatify <span class="text-primary">AI</span>
+      </h4>
+    </div>
 
-      <div class="flex-grow-1 py-3">
-          <ul class="nav flex-column">
+    <!-- Menu -->
+    <div class="flex-grow-1 py-3">
+      <ul class="nav flex-column">
 
-              <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/dashboard"
-                     routerLinkActive="active">
-                      <i class="fas fa-home me-2"></i> Dashboard
-                  </a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/dashboard"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fas fa-home me-2"></i> Dashboard
+          </a>
+        </li>
 
-              <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/article"
-                     routerLinkActive="active">
-                     <i class="fa-solid fa-pen-to-square"></i> Write Article
-                  </a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/article"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-solid fa-pen-to-square me-2"></i> Write Article
+          </a>
+        </li>
 
-              <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/blog-title"
-                     routerLinkActive="active">
-                      <i class="fa-solid fa-hashtag"></i> Blog Title
-                  </a>
-              </li>
-               <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/image-generate"
-                     routerLinkActive="active">
-                      <i class="fa-regular fa-image"></i> Generate Images
-                  </a>
-              </li>
-               <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/remove-background"
-                     routerLinkActive="active">
-                     <i class="fa-solid fa-eraser"></i> Remove background
-                  </a>
-              </li>
-               <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/remove-object"
-                     routerLinkActive="active">
-                      <i class="fa-solid fa-scissors"></i> Remove Object
-                  </a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/blog-title"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-solid fa-hashtag me-2"></i> Blog Title
+          </a>
+        </li>
 
-              <li class="nav-item">
-                  <a class="nav-link text-white sidebar-link"
-                     routerLink="/ai/resume-review"
-                     routerLinkActive="active">
-                     <i class="fa-regular fa-file-lines"></i> Review Resume
-                  </a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/image-generate"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-regular fa-image me-2"></i> Generate Images
+          </a>
+        </li>
 
-          </ul>
-      </div>
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/remove-background"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-solid fa-eraser me-2"></i> Remove Background
+          </a>
+        </li>
 
-      <div class="p-3 border-top border-secondary">
-          <div class="d-flex justify-content-between align-items-center">
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/remove-object"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-solid fa-scissors me-2"></i> Remove Object
+          </a>
+        </li>
 
-              <div class="d-flex align-items-center me-2">
-                  <img width="40" height="40"
-                       src="https://tse1.mm.bing.net/th/id/OIP.rcmXeqCUOiCg54dfU4v9tgHaHa?pid=Api&P=0&h=180"
-                       class="rounded-circle me-3">
+        <li class="nav-item">
+          <a class="nav-link text-white sidebar-link"
+             routerLink="/ai/resume-review"
+             routerLinkActive="active"
+             (click)="isSidebarOpen = false">
+            <i class="fa-regular fa-file-lines me-2"></i> Resume Review
+          </a>
+        </li>
 
-                  <div>
-                      <p class="text-white fw-bold mb-0 small text-truncate">John Creator</p>
-                      <span class="badge bg-primary-subtle text-primary">Pro Plan</span>
-                  </div>
-              </div>
+      </ul>
+    </div>
 
-              <button (click)="logOut()" class="btn btn-outline-secondary btn-sm">
-                  <i class="fa-solid fa-right-from-bracket"></i>
-              </button>
+    <!-- Profile -->
+    <div class="p-3 border-top border-secondary">
+      <div class="d-flex justify-content-between align-items-center">
 
+        <div class="d-flex align-items-center">
+          <img
+            width="40"
+            height="40"
+            src="https://tse1.mm.bing.net/th/id/OIP.rcmXeqCUOiCg54dfU4v9tgHaHa"
+            class="rounded-circle me-3"
+          >
+          <div>
+            <p class="text-white fw-bold mb-0 small">John Creator</p>
+            <span class="badge bg-primary-subtle text-primary">
+              Pro Plan
+            </span>
           </div>
+        </div>
+
+        <button
+          class="btn btn-outline-secondary btn-sm"
+          (click)="logOut()"
+        >
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+
       </div>
+    </div>
 
   </div>
 
-
-  <!-- Main Content Section -->
+  <!-- MAIN CONTENT -->
   <div class="content-area flex-grow-1">
-      
-      <div class="header p-3 shadow-sm d-flex justify-content-between align-items-center">
-          <h5 class="m-0">My Dashboard</h5>
-      </div>
 
-      <div class="p-4">
-          <router-outlet></router-outlet>
-      </div>
+    <!-- Header -->
+    <div class="header p-3 shadow-sm d-flex align-items-center">
+      <button
+        class="btn btn-outline-secondary d-lg-none me-3"
+        (click)="isSidebarOpen = !isSidebarOpen"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <h5 class="m-0">My Dashboard</h5>
+    </div>
+
+    <!-- Router Content -->
+    <div class="p-4">
+      <router-outlet></router-outlet>
+    </div>
 
   </div>
 

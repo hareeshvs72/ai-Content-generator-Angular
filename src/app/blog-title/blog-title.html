@@ -1,55 +1,74 @@
+<div class="container-fluid ai-bg min-vh-100 py-5">
+  <div class="row justify-content-center g-4">
 
-<div class="container-fluid ">
-   <div class="row">
-      <!-- left -->
+    <!-- LEFT : INPUT -->
+    <div class="col-md-5">
+      <form class="card ai-card shadow-lg p-4 rounded-4 h-100" (submit)="$event.preventDefault()">
+        <h3 class="fw-bold ai-title mb-4">
+          ✨ AI Blog Title Generator
+        </h3>
 
-    <div class="col-md-6">
-      <form action="" class="card shadow p-4">
-        <div>
-          <h3 class="text-primary fw-bold mb-5">Ai Title Generator</h3>
+        <!-- Keyword -->
+        <div class="mb-4">
+          <label class="fw-semibold mb-2 text-muted">
+            What is your topic?
+          </label>
+          <input [(ngModel)]="prompt" name="prompt" id="article" type="text"
+            class="form-control form-control-lg ai-input" placeholder="e.g. Artificial Intelligence in Healthcare"
+            required />
         </div>
-           <div>
-               <label class="fw-semibold" for="article">KeyWord</label>
-               <input [(ngModel)]="prompt" name="prompt" id="article" type="text" class="form-control my-2"  placeholder="Search For Your Blog  Title" required>
-           </div>
-            <p class="fw-semibold">Category</p>
-           <div class="d-flex flex-wrap">
 
-           
-            @for (item of blogCategory; track $index) {
-              <span (click)="selectedLength(item)" class="px-3 border  py-2 rounded-5 mx-2 my-2" [ngClass]="{'bg-primary text-light' : lengthSelect == item }">{{item}}</span>
-            }
-           </div>
-               <button (click)="blogTitle()"  class="btn btn-primary my-4">
-            @if(loader){
-              <div class="spinner-border text-light fs-5" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-            }
-            @else { <i class="fa-solid fa-pen-to-square mx-2"></i>}
-           Generate Article
-          </button>
+        <!-- Category -->
+        <p class="fw-semibold text-muted mb-2">
+          Choose a writing style
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          @for (item of blogCategory; track $index) {
+          <span (click)="selectedLength(item)" class="ai-pill" [class.active]="lengthSelect == item">
+            {{ item }}
+          </span>
+          }
+        </div>
+
+        <!-- Button -->
+        <button type="button" (click)="blogTitle()" class="btn ai-btn w-100 py-2 fw-semibold rounded-3">
+          @if (loader) {
+          <span class="spinner-border spinner-border-sm me-2"></span>
+          Crafting titles with AI...
+          }
+          @else {
+          🚀 Generate Smart Titles
+          }
+        </button>
       </form>
     </div>
-    <!-- right -->
-     <div class="col-md-6">
-      <div class="card shadow p-5" style="max-height: 600px; height: 100%;" >
 
-                 <h4  class="text-primary"><i class="fa-solid fa-pen-to-square mx-2"></i>Generate Article</h4>
+    <!-- RIGHT : OUTPUT -->
+    <div class="col-md-5">
+      <div class="card ai-output-card shadow-lg p-4 rounded-4 h-100">
+        <h4 class="fw-semibold ai-output-title mb-4">
+          🧠 AI Generated Results
+        </h4>
 
-               <div class="d-flex align-items-center justify-content-center flex-column h-100">
-                @if (!blogTitles) {
-                  <i  class="fa-solid fa-pen-to-square mx-2 fs-1 text-secondary"></i>
-                      <p class="my-3 fw-semibold text-secondary">Enter A Topic Na Click " Generate Topic " to Get Start</p>
-                }
-                @else {
-                <pre class="blog-text w-100">
-              {{ blogTitles }}
-        </pre>
-                }
-                      
-               </div>
+        <div class="d-flex align-items-center justify-content-center flex-column h-100 text-center">
+          @if (!blogTitles) {
+          <div class="empty-state">
+            <div class="empty-icon mb-3">📝</div>
+            <p class="fw-semibold  text-light">
+              Start by entering a topic on the left.<br />
+              AI will instantly generate engaging blog titles for you.
+            </p>
+          </div>
+          }
+          @else {
+          <pre class="blog-text w-100">
+{{ blogTitles }}
+            </pre>
+          }
+        </div>
       </div>
     </div>
-   </div>
+
+  </div>
 </div>

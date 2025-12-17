@@ -1,8 +1,50 @@
-/* 
-.bg-gradient-blue {
-  background: linear-gradient(90deg, #518ef0, #60a5fa);
-} */
+/* BRAND */
+.brand {
+  color: #2563eb;
+}
 
-.title{
-    color: rgb(9, 9, 217);
+/* HERO */
+.hero-bg {
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+}
+
+.hero-btn {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: #fff;
+  border: none;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+}
+
+/* VISUAL */
+.hero-visual {
+  background: #ffffff;
+  padding: 80px 40px;
+}
+
+/* FEATURES */
+.feature-card {
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+/* PRICING */
+.pricing-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid #e5edff;
+  text-align: center;
+}
+
+.pricing-card.highlight {
+  border: 2px solid #2563eb;
+  box-shadow: 0 15px 40px rgba(37,99,235,0.15);
+}
+
+/* FOOTER */
+.footer {
+  background: #f8fafc;
 }

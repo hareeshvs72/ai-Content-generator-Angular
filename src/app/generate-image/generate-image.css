@@ -1,0 +1,78 @@
+/* Background */
+.image-bg {
+  background: linear-gradient(135deg, #f5f3ff, #eef2ff);
+}
+
+/* Card */
+.image-card {
+  background: #ffffff;
+  border: none;
+}
+
+/* Title */
+.image-title {
+  color: #6d28d9; /* Violet */
+}
+
+/* Input */
+.image-input {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  resize: none;
+}
+
+.image-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 0.15rem rgba(139, 92, 246, 0.25);
+}
+
+/* Style pills */
+.image-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image-pill:hover {
+  background: #ede9fe;
+  border-color: #8b5cf6;
+}
+
+.image-pill.active {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Button */
+.image-btn {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  border: none;
+}
+
+.image-btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #4338ca);
+}
+
+/* Output card */
+.image-output-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Output title */
+.image-output-title {
+  color: #c7d2fe;
+}
+
+/* Generated image */
+.generated-img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}

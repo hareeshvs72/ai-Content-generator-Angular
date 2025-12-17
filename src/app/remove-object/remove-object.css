@@ -1,0 +1,75 @@
+/* ===============================
+   PAGE BACKGROUND
+================================ */
+.object-bg {
+  background: linear-gradient(135deg, #fff7ed, #f5f3ff);
+}
+
+/* ===============================
+   CARDS
+================================ */
+.object-card {
+  background: #ffffff;
+  border: none;
+}
+
+.object-output-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* ===============================
+   TITLES
+================================ */
+.object-title {
+  color: #ea580c; /* warm orange */
+}
+
+.object-output-title {
+  color: #c4b5fd; /* soft violet */
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.object-input,
+.object-file-input {
+  border-radius: 12px;
+}
+
+.object-input:focus,
+.object-file-input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 0.15rem rgba(249, 115, 22, 0.25);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.object-btn {
+  background: linear-gradient(135deg, #f97316, #7c3aed);
+  color: #ffffff;
+  border: none;
+}
+
+.object-btn:hover {
+  background: linear-gradient(135deg, #ea580c, #6d28d9);
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+.empty-icon {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .object-title,
+  .object-output-title {
+    text-align: center;
+  }
+}

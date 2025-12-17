@@ -1,8 +1,88 @@
+/* Background */
+.writer-bg {
+  background: linear-gradient(135deg, #ecfeff, #eef2ff);
+}
+
+/* Card */
+.writer-card {
+  background: #ffffff;
+  border: none;
+}
+
+/* Title */
+.writer-title {
+  color: #0d9488; /* Teal */
+}
+
+/* Input */
+.writer-input {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.writer-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.15rem rgba(99, 102, 241, 0.25);
+}
+
+/* Length pills */
+.writer-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.writer-pill:hover {
+  background: #ecfeff;
+  border-color: #0d9488;
+}
+
+.writer-pill.active {
+  background: linear-gradient(135deg, #0d9488, #6366f1);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Button */
+.writer-btn {
+  background: linear-gradient(135deg, #0d9488, #6366f1);
+  color: #ffffff;
+  border: none;
+}
+
+.writer-btn:hover {
+  background: linear-gradient(135deg, #0f766e, #4f46e5);
+}
+
+/* Output card */
+.writer-output-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Output title */
+.writer-output-title {
+  color: #67e8f9;
+}
+
+/* Article text */
 .article-text {
-  margin: 0;                /* 🔥 removes default margins */
+  background: #020617;
+  color: #e5e7eb;
+  padding: 18px;
+  border-radius: 14px;
+  max-height: 420px;
+  overflow-y: auto;
   white-space: pre-wrap;
-  font-family: system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Empty state */
+.empty-icon {
+  font-size: 48px;
 }

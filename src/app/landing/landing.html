@@ -1,189 +1,155 @@
-<div class="container-fluid bg-gradient-blue w-100 min-vh-100 d-flex flex-column">
+<!-- HERO SECTION -->
+<div class="container-fluid hero-bg min-vh-100 d-flex flex-column">
 
-    <!-- header -->
-    <div class="d-flex justify-content-between align-items-center py-3">
-        <!-- leftside -->
-        <div class="d-flex align-items-center">
-            <img width="80px" src="logo.png" alt="logo">
-            <h4 class="ms-2"><span class="title">C</span>reatify <span class="title">AI</span></h4>
-        </div>
-
-        <!-- right side login -->
-        <div>
-          @if (!token) {
-            <button (click)="navigateToLogin()" class="btn btn-primary rounded-5 py-2 px-4">
-                Get Started <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          }
-          @else {
-            <img width="40px" height="40px" class="mx-md-5" style="border-radius: 50%;" src="https://tse1.mm.bing.net/th/id/OIP.jQc294WED8p75DlIKBgMNAHaE8?pid=Api&P=0&h=180" alt="logo">
-          }
-            
-        </div>
+  <!-- NAVBAR -->
+  <div class="container d-flex justify-content-between align-items-center py-4">
+    <div class="d-flex align-items-center">
+      <img src="logo.png" width="60">
+      <h4 class="ms-2 fw-bold mb-0">
+        Creatify <span class="brand">AI</span>
+      </h4>
     </div>
 
-    <!-- home content -->
-    <div class="flex-grow-1 d-flex align-items-center justify-content-center mb-5">
-        <div class="w-100">
-            <h1 class="text-center">Next-Level <span class="title">Content Creation</span> <br> Starts Here</h1>
-            <h5 class="text-center mt-3">
-                Boost your productivity with <span class="title">AI tools</span> trusted by creators worldwide.
-            </h5>
-            <div class="d-flex align-items-center justify-content-center flex-column">
-                <button type="button" (click)="navigateDashbord()" class="btn btn-primary px-4 mt-3">Get Started</button>
-            </div>
+    <button class="btn hero-btn px-4 rounded-pill">
+      Get Started
+    </button>
+  </div>
+
+  <!-- HERO CONTENT -->
+  <div class="container flex-grow-1 d-flex align-items-center">
+    <div class="row align-items-center w-100">
+
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold">
+          Create Content, Images & Designs<br>
+          <span class="brand">Faster with AI</span>
+        </h1>
+
+        <p class="fs-5 text-muted mt-4">
+          Creatify AI helps creators, marketers, and businesses generate
+          high-quality content, stunning images, and smart designs in seconds.
+        </p>
+
+        <div class="mt-4">
+          <button class="btn hero-btn px-5 py-2 me-3">
+            Try for Free
+          </button>
+          <button class="btn btn-outline-primary px-5 py-2">
+            View Features
+          </button>
         </div>
-    </div>
-       
-</div>
+      </div>
 
-   <!-- tools -->
-<div class="container">
-      <div class="row p-md-5 mt-5 justify-content-center">
-            @for (item of aiToolCard; track $index) {
-            <div class="col-sm-6 col-md-4  my-3">
-                <div class="card h-100 shadow-sm border-0">
-                    <div
-                        class="icon-container-circle d-flex align-items-center justify-content-center m-3"
-                        [ngStyle]="{ 'background-color': item.bgColor, 'color': '#ffffff', 'width': '50px', 'height': '50px', 'border-radius': '50%' }"
-                    >
-                        <i class="fs-4" [class]="item?.icon"></i>
-                    </div>
-                    <div class="card-body pt-0">
-                        <h5 class="card-title">{{ item?.title }}</h5>
-                        <p class="card-text text-muted">
-                            {{ item?.description }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            }
+      <div class="col-md-6 text-center">
+        <div class="hero-visual shadow-lg rounded-4">
+          <p class="fw-semibold mb-1">⚡ AI Powered Workspace</p>
+          <small class="text-muted">
+            Articles • Images • Editing • Automation
+          </small>
         </div>
-</div>
+      </div>
 
-  <!-- plan  -->
-
-
-  <!-- <div class="container p-5 vh-100">
-    <div class="text-center">
-        <h2 class="title">Choose Your Plan</h2>
-      <div class="w-100 d-flex align-items-center justify-content-center mt-3">
-        <h6 class="w-50">Choose the plan that fits your needs and unlock powerful AI tools designed to boost your productivity and creativity.</h6>
     </div>
+  </div>
 </div>
-  </div> -->
 
+<!-- TRUST SECTION -->
+<div class="container py-5 text-center">
+  <p class="text-muted fw-semibold">Trusted by creators & startups worldwide</p>
+  <div class="d-flex justify-content-center gap-5 mt-3 opacity-75">
+    <span>Startup</span>
+    <span>Marketers</span>
+    <span>Designers</span>
+    <span>Developers</span>
+  </div>
+</div>
 
-<div class="min-vh-100 w-100 bg-black text-white">
-
-  <!-- Header -->
-  <!-- <header class="d-flex align-items-center justify-content-between p-4 border-bottom" style="border-color:#0b1c39;">
-    <h1 class="fw-bold fs-2">
-      <span style="color:#1e90ff;">Creatify</span> AI
-    </h1>
-
-    <button class="btn btn-primary px-4">Dashboard</button>
-  </header> -->
-
-  <!-- Hero Section -->
-  <section class="text-center py-5">
-    <h2 class="fw-bold display-5 mb-3">
-      Upgrade Your <span style="color:#1e90ff;">Creativity</span>
-    </h2>
-    <p class="text-secondary fs-5 mx-auto" style="max-width:650px;">
-      Choose the perfect plan to unlock AI-powered content generation with blazing-fast performance.
+<!-- FEATURES -->
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Everything You Need in One AI Platform</h2>
+    <p class="text-muted">
+      Powerful tools designed to save time and boost creativity
     </p>
-  </section>
+  </div>
 
-  <!-- Pricing Cards -->
-  <section class="container pb-5">
-    <div class="row g-4">
+  <div class="row g-4">
 
-      <!-- Free Plan -->
-      <div class="col-md-4">
-        <div class="p-4 rounded-4 h-100 border" style="background:#0a0f1f; border-color:#1e90ff40;">
-          <h3 class="fw-semibold fs-3">Free</h3>
-          <p class="text-secondary">Get started without any payment</p>
-
-          <div class="fs-1 fw-bold mb-4">
-            ₹0 <span class="fs-5 text-secondary">/month</span>
-          </div>
-
-          <ul class="list-unstyled text-light mb-4">
-            <li>✔ 20 AI generations/day</li>
-            <li>✔ Basic Templates</li>
-            <li>✔ Standard Speed</li>
-            <li>✔ Limited Support</li>
-          </ul>
-
-          <button class="btn w-100 btn-outline-primary text-primary fw-semibold">
-            Continue Free
-          </button>
-        </div>
+    <div class="col-md-4">
+      <div class="feature-card p-4 shadow-sm h-100">
+        <h5 class="fw-semibold">✍️ AI Writing</h5>
+        <p class="text-muted">
+          Generate articles, blogs, and marketing copy instantly.
+        </p>
       </div>
-
-      <!-- Pro Plan -->
-      <div class="col-md-4">
-        <div class="p-4 rounded-4 h-100 border shadow-lg position-relative"
-             style="background:#0e1329; border-color:#1e90ff; box-shadow:0 0 25px rgba(0,123,255,0.6);">
-
-          <span class="badge bg-primary px-3 py-2 position-absolute top-0 end-0 m-3">
-            Most Popular
-          </span>
-
-          <h3 class="fw-semibold fs-3 mt-4">Pro</h3>
-          <p class="text-secondary">Perfect for creators & businesses</p>
-
-          <div class="fs-1 fw-bold mb-4">
-            ₹499 <span class="fs-5 text-secondary">/month</span>
-          </div>
-
-          <ul class="list-unstyled text-light mb-4">
-            <li>✔ Unlimited AI generations</li>
-            <li>✔ Premium Templates</li>
-            <li>✔ Priority Speed</li>
-            <li>✔ Advanced Editor</li>
-            <li>✔ Email Support</li>
-          </ul>
-
-          <button class="btn btn-primary w-100 fw-semibold"
-            >
-            Upgrade to Pro
-          </button>
-        </div>
-      </div>
-
-      <!-- Enterprise Plan -->
-      <div class="col-md-4">
-        <div class="p-4 rounded-4 h-100 border" style="background:#0a0f1f; border-color:#1e90ff40;">
-          <h3 class="fw-semibold fs-3">Enterprise</h3>
-          <p class="text-secondary">For teams & large-scale content</p>
-
-          <div class="fs-1 fw-bold mb-4">
-            ₹1,999 <span class="fs-5 text-secondary">/month</span>
-          </div>
-
-          <ul class="list-unstyled text-light mb-4">
-            <li>✔ Unlimited users</li>
-            <li>✔ API Access</li>
-            <li>✔ Custom Templates</li>
-            <li>✔ Dedicated Server</li>
-            <li>✔ 24/7 Support</li>
-          </ul>
-
-          <button class="btn w-100 btn-outline-primary text-primary fw-semibold">
-            Contact Sales
-          </button>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 border-top text-secondary" style="border-color:#0b1c39;">
-    © 2025 Creatify AI • All rights reserved
-  </footer>
+    <div class="col-md-4">
+      <div class="feature-card p-4 shadow-sm h-100">
+        <h5 class="fw-semibold">🖼️ AI Images</h5>
+        <p class="text-muted">
+          Create stunning visuals and artwork from text prompts.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="feature-card p-4 shadow-sm h-100">
+        <h5 class="fw-semibold">✂️ Smart Editing</h5>
+        <p class="text-muted">
+          Remove backgrounds, objects, and enhance images with AI.
+        </p>
+      </div>
+    </div>
+
+  </div>
 </div>
 
+<!-- PRICING -->
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Simple Pricing</h2>
+    <p class="text-muted">Choose a plan that fits your needs</p>
+  </div>
 
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="pricing-card">
+        <h5>Free</h5>
+        <h2>₹0</h2>
+        <p class="text-muted">For individuals</p>
+        <button class="btn btn-outline-primary w-100 mt-3">Start Free</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="pricing-card highlight">
+        <span class="badge bg-primary mb-2">Popular</span>
+        <h5>Pro</h5>
+        <h2>₹499</h2>
+        <p class="text-muted">Best for creators</p>
+        <button class="btn hero-btn w-100 mt-3">Upgrade</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="pricing-card">
+        <h5>Enterprise</h5>
+        <h2>₹1,999</h2>
+        <p class="text-muted">For teams</p>
+        <button class="btn btn-outline-primary w-100 mt-3">
+          Contact Sales
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer text-center py-4">
+  <p class="mb-0 text-muted">
+    © 2025 Creatify AI. All rights reserved.
+  </p>
+</footer>
