@@ -34,6 +34,7 @@ selectedLength(item:any){
 }
 
 textToImageGenerator(){
+  if(!this.generatedImage){
   this.loader = true
 console.log(this.prompt);
 console.log(this.style);
@@ -49,6 +50,25 @@ this.api.imageGeneratorAPI(reqBody).subscribe({
     this.loader = false
   }
 })
+}
+else{
+  this.generatedImage = ""
+    this.loader = true
+console.log(this.prompt);
+console.log(this.style);
+const reqBody = {prompt:this.prompt,style:this.style}
+this.api.imageGeneratorAPI(reqBody).subscribe({
+  next:(res:any)=>{
+    console.log(res);
+    this.generatedImage = res
+    this.loader = false
+  },
+  error:(reason:any)=>{
+    console.log(reason.error);
+    this.loader = false
+  }
+})
+}
 
 
 }

@@ -1,7 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Api } from '../service/api';
 @Component({
   selector: 'app-landing',
   standalone: true,          // ✅ Enable standalone mode
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class Landing {
   router = inject(Router)
   token:boolean = false
+  api = inject(Api)
   platformId = inject(PLATFORM_ID)
  aiToolCard:any = [
   {
@@ -51,6 +52,8 @@ export class Landing {
     bgColor: "#3E3E3E" // Dark Grey
   }
 ];
+
+
 
 ngOnInit(){
 this.getToken()

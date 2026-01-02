@@ -3,10 +3,7 @@
 
     <!-- LEFT : INPUT -->
     <div class="col-md-5">
-      <form
-        class="card writer-card shadow-lg p-4 rounded-4 h-100"
-        (submit)="$event.preventDefault()"
-      >
+      <form class="card writer-card shadow-lg p-4 rounded-4 h-100" (submit)="$event.preventDefault()">
         <h3 class="fw-bold writer-title mb-4">
           ✍️ AI Article Writer
         </h3>
@@ -16,15 +13,9 @@
           <label class="fw-semibold mb-2 text-muted">
             What do you want to write about?
           </label>
-          <input
-            [(ngModel)]="prompt"
-            name="prompt"
-            id="article"
-            type="text"
-            class="form-control form-control-lg writer-input"
-            placeholder="e.g. Benefits of Artificial Intelligence"
-            required
-          />
+          <input [(ngModel)]="prompt" name="prompt" id="article" type="text"
+            class="form-control form-control-lg writer-input" placeholder="e.g. Benefits of Artificial Intelligence"
+            required />
         </div>
 
         <!-- Length -->
@@ -34,28 +25,20 @@
 
         <div class="d-flex flex-wrap gap-2 mb-4">
           @for (item of articleLength; track $index) {
-            <span
-              (click)="selectedLength(item)"
-              class="writer-pill"
-              [class.active]="lengthSelect === item.length"
-            >
-              {{ item?.text }}
-            </span>
+          <span (click)="selectedLength(item)" class="writer-pill" [class.active]="lengthSelect === item.length">
+            {{ item?.text }}
+          </span>
           }
         </div>
 
         <!-- Button -->
-        <button
-          type="button"
-          (click)="generateArticle()"
-          class="btn writer-btn w-100 py-2 fw-semibold rounded-3"
-        >
+        <button type="button" (click)="generateArticle()" class="btn writer-btn w-100 py-2 fw-semibold rounded-3">
           @if (loader) {
-            <span class="spinner-border spinner-border-sm me-2"></span>
-            Writing your article...
+          <span class="spinner-border spinner-border-sm me-2"></span>
+          Writing your article...
           }
           @else {
-            ✨ Generate Full Article
+          ✨ Generate Full Article
           }
         </button>
       </form>
@@ -63,27 +46,23 @@
 
     <!-- RIGHT : OUTPUT -->
     <div class="col-md-5">
-      <div
-        class="card writer-output-card shadow-lg p-4 rounded-4 h-100"
-      >
+      <div class="card writer-output-card shadow-lg p-4 rounded-4 h-100">
         <h4 class="fw-semibold writer-output-title mb-4">
           📄 AI Generated Article
         </h4>
 
-        <div
-          class="d-flex align-items-center justify-content-center flex-column h-100 text-center"
-        >
+        <div class="d-flex align-items-center justify-content-center flex-column h-100 text-center">
           @if (!article) {
-            <div class="empty-state">
-              <div class="empty-icon mb-3">🧠</div>
-              <p class="fw-semibold text-light">
-                Enter a topic and choose the length.<br />
-                Our AI will write a complete article for you.
-              </p>
-            </div>
+          <div class="empty-state">
+            <div class="empty-icon mb-3">🧠</div>
+            <p class="fw-semibold text-light">
+              Enter a topic and choose the length.<br />
+              Our AI will write a complete article for you.
+            </p>
+          </div>
           }
           @else {
-            <pre class="article-text w-100">
+          <pre class="article-text w-100">
 {{ article }}
             </pre>
           }

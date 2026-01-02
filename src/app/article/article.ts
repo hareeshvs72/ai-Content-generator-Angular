@@ -47,7 +47,7 @@ generateArticle(){
   this.api.generateArticleAPI(reqBody).subscribe({
    next:(res:any)=>{
     console.log(res);
-    this.article = res
+    this.article = res.output
     this.loader = false
     
    },

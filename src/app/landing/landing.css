@@ -1,50 +1,126 @@
-/* BRAND */
-.brand {
+/* ================= GLOBAL ================= */
+.title {
   color: #2563eb;
 }
 
-/* HERO */
-.hero-bg {
+/* ================= HEADER ================= */
+.header {
+  background: transparent;
+}
+
+/* ================= HERO ================= */
+.bg-gradient-blue {
   background: linear-gradient(135deg, #f8fbff, #eef4ff);
 }
 
-.hero-btn {
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  color: #64748b;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
   background: linear-gradient(135deg, #2563eb, #60a5fa);
   color: #fff;
   border: none;
 }
 
-.hero-btn:hover {
+.primary-btn:hover {
   background: linear-gradient(135deg, #1d4ed8, #3b82f6);
 }
 
-/* VISUAL */
-.hero-visual {
-  background: #ffffff;
-  padding: 80px 40px;
+/* ================= TOOLS ================= */
+.tool-card {
+  border-radius: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* FEATURES */
-.feature-card {
-  border-radius: 16px;
-  background: #ffffff;
+.tool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* PRICING */
+.icon-container-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+}
+
+/* ================= PRICING (UNCHANGED – DARK) ================= */
+.pricing-section {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.pricing-subtitle {
+  max-width: 650px;
+}
+
 .pricing-card {
-  background: #ffffff;
-  padding: 32px;
+  background: #0a0f1f;
   border-radius: 20px;
-  border: 1px solid #e5edff;
-  text-align: center;
+  padding: 32px;
+  height: 100%;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+}
+
+.pricing-card .price {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  color: #9ca3af;
 }
 
 .pricing-card.highlight {
   border: 2px solid #2563eb;
-  box-shadow: 0 15px 40px rgba(37,99,235,0.15);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
 }
 
-/* FOOTER */
-.footer {
-  background: #f8fafc;
+/* ================= FOOTER ================= */
+.footer-pro {
+  background: #ffffff;
+  border-top: 1px solid #e5edff;
+}
+
+.footer-pro h6 {
+  color: #0f172a;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  color: #2563eb;
+}
+
+.footer-pro i {
+  cursor: pointer;
+  color: #64748b;
+}
+
+.footer-pro i:hover {
+  color: #2563eb;
 }
