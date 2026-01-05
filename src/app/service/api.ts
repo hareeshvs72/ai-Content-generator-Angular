@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { json } from 'stream/consumers';
 
 @Injectable({
@@ -9,20 +10,23 @@ export class Api {
 
   private http = inject(HttpClient);
   private serverUrl = 'http://localhost:3000';
-
+  platformid = inject(PLATFORM_ID)
 
 
   /* ================= TOKEN ================= */
-  appendToken() {
-    const token = JSON.parse(sessionStorage.getItem('token')|| "");
-    
-    let headers = new HttpHeaders();
+appendToken() {
+  let headers = new HttpHeaders();
+
+  if (isPlatformBrowser(this.platformid)) {
+    const token = JSON.parse(sessionStorage.getItem('token')|| ""); // ✅ no JSON.parse
+
     if (token) {
       headers = headers.set('Authorization', `Bearer ${token}`);
     }
-
-    return { headers };
   }
+
+  return { headers };
+}
 
   /* ================= AUTH ================= */
   registerUser(reqBody: any) {
@@ -66,5 +70,11 @@ export class Api {
     );
   }
 
+    getAllAiData() {
+    return this.http.get(
+      `${this.serverUrl}/ai/get-allData`,
+      this.appendToken()
+    );
+  }
 
 }

@@ -39,7 +39,7 @@ blogTitle(){
   this.api.blogTitleApi(reqBody).subscribe({
    next:(res:any)=>{
     console.log(res);
-    this.blogTitles = res
+    this.blogTitles = res.output
     this.loader = false
     
    },

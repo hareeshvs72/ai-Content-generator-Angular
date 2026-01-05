@@ -42,7 +42,7 @@ const reqBody = {prompt:this.prompt,style:this.style}
 this.api.imageGeneratorAPI(reqBody).subscribe({
   next:(res:any)=>{
     console.log(res);
-    this.generatedImage = res
+    this.generatedImage = res.output
     this.loader = false
   },
   error:(reason:any)=>{
@@ -60,7 +60,9 @@ const reqBody = {prompt:this.prompt,style:this.style}
 this.api.imageGeneratorAPI(reqBody).subscribe({
   next:(res:any)=>{
     console.log(res);
-    this.generatedImage = res
+    this.generatedImage = res.output
+    console.log(this.generatedImage);
+    
     this.loader = false
   },
   error:(reason:any)=>{

@@ -58,7 +58,7 @@ reqBody.append('image',this.selectedFile)
 this.api.removeBackgroundApi(reqBody).subscribe({
   next:(res:any)=>{
     console.log(res);
-    this.backgroundRemoved = res
+    this.backgroundRemoved = res.output
     console.log(this.backgroundRemoved);
     
     this.loader = false
