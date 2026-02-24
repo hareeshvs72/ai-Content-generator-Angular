@@ -76,5 +76,14 @@ appendToken() {
       this.appendToken()
     );
   }
+  /* ================= STRIPE ================= */
+
+createCheckoutSession(plan: string, userId: string) {
+  return this.http.post(
+    `${this.serverUrl}/create`,
+    { plan, userId },
+    this.appendToken()
+  );
+}
 
 }

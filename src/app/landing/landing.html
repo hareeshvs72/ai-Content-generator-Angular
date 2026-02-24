@@ -146,7 +146,7 @@
             <li>✔ Advanced Editor</li>
           </ul>
 
-          <button class="btn primary-btn w-100">
+          <button (click)="upgrade('pro')" class="btn primary-btn w-100">
             Upgrade to Pro
           </button>
         </div>
@@ -169,8 +169,8 @@
             <li>✔ 24/7 Support</li>
           </ul>
 
-          <button class="btn btn-outline-primary w-100">
-            Contact Sales
+          <button  (click)="upgrade('enterprise')" class="btn btn-outline-primary w-100">
+             Upgrade to Enterprise
           </button>
         </div>
       </div>
