@@ -9,7 +9,7 @@ import { json } from 'stream/consumers';
 export class Api {
 
   private http = inject(HttpClient);
-  private serverUrl = 'http://localhost:3000';
+  private serverUrl = 'http://localhost:5000';
   platformid = inject(PLATFORM_ID)
 
 
@@ -80,7 +80,7 @@ appendToken() {
 
 createCheckoutSession(plan: string, userId: string) {
   return this.http.post(
-    `${this.serverUrl}/create`,
+    `${this.serverUrl}/api/subscription/create`,
     { plan, userId },
     this.appendToken()
   );

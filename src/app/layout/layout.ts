@@ -12,6 +12,18 @@ import { CommonModule } from '@angular/common';
 export class Layout {
   router = inject(Router)
   isSidebarOpen = false;
+  user:any;
+  ngOnInit() {
+
+    const storedUser = sessionStorage.getItem("users");
+console.log(storedUser);
+
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+    }
+
+  }
+
   logOut(){
     sessionStorage.clear()
     this.router.navigateByUrl('/')

@@ -92,13 +92,13 @@
           <img
             width="40"
             height="40"
-            src="https://tse1.mm.bing.net/th/id/OIP.rcmXeqCUOiCg54dfU4v9tgHaHa"
+            [src]="user?.avatar || 'https://tse1.mm.bing.net/th/id/OIP.rcmXeqCUOiCg54dfU4v9tgHaHa'"
             class="rounded-circle me-3"
           >
           <div>
-            <p class="text-white fw-bold mb-0 small">John Creator</p>
+            <p class="text-white fw-bold mb-0 small">{{user?.username}}</p>
             <span class="badge bg-primary-subtle text-primary">
-              Pro Plan
+              {{user?.plan}}
             </span>
           </div>
         </div>

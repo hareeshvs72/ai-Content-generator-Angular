@@ -106,6 +106,7 @@ upgrade(plan: string) {
 
         // 🔥 Redirect to Stripe Checkout
         window.location.href = res.url;
+          
       },
       error: (err) => {
         console.error("API Error:", err);

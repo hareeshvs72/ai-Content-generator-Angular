@@ -54,12 +54,12 @@
                      alt="User Avatar">
                 
                 <div>
-                    <p class="text-white fw-bold mb-0 small text-truncate">John Creator</p>
-                    <span class="badge bg-primary-subtle text-primary">Pro Plan</span>
+                    <p class="text-white fw-bold mb-0 small text-truncate">{{user?.username}}</p>
+                    <span class="badge bg-primary-subtle text-primary">{{user?.plan}}</span>
                 </div>
             </div>
 
-            <button class="btn btn-outline-secondary btn-sm" title="Logout">
+            <button (click)="handileLogout()" class="btn btn-outline-secondary btn-sm" title="Logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </button>
         </div>
