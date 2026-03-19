@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { Sidebar } from "../sidebar/sidebar";
 import { Api } from '../service/api';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -11,58 +10,76 @@ import { Router } from '@angular/router';
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-api = inject(Api)
-router = inject(Router)
-Dashbord:any = []
-aiUserData:any = []
- articlecount:string = ""
- blogTitlecount:string = ""
-  imagegeneratedCount:string = ""
-   bgremoveCount:string = ""
-ngOnInit(){
-  this.getAllData()
-}
 
-getAllData(){
- this.api.getAllAiData().subscribe({
-next:((res:any)=>{
-  console.log(res);
-  this.aiUserData = res
- this.articlecount = res.filter((res:any)=>res.ai =="article").length
-  this.blogTitlecount = res.filter((res:any)=>res.ai =="blogTitle").length
-   this.bgremoveCount = res.filter((res:any)=>res.ai =="bgRemove").length
-    this.imagegeneratedCount = res.filter((res:any)=>res.ai =="imagegenerator").length
- console.log(this.articlecount);
- console.log(this.blogTitlecount);
- console.log(this.imagegeneratedCount);
- console.log(this.bgremoveCount);
- 
+  api = inject(Api);
+  router = inject(Router);
 
- 
- 
-}),
-  error:((reason:any)=>{
-    console.log(reason);
-    
-  })
- })
-}
+  aiUserData: any[] = [];
 
+  // ✅ counts
+  articlecount: number = 0;
+  blogTitlecount: number = 0;
+  imagegeneratedCount: number = 0;
+  bgremoveCount: number = 0;
 
-naviagetToArticle(){
-  this.router.navigateByUrl('/ai/article')
-}
-naviagetToBlogTitle(){
-  this.router.navigateByUrl('/ai/blog-title')
-}
-naviagetToImageGenerator(){
-  this.router.navigateByUrl('/ai/image-generate')
-}
-naviagetToRemoveBg(){
-  console.log("inisde remove bg route");
-  
-  this.router.navigateByUrl('/ai/remove-background')
-}
+  // 🔥 pagination
+  currentPage: number = 1;
+  totalPages: number = 1;
+  limit: number = 5;
 
+  ngOnInit() {
+    this.getAllData();
+  }
 
+  getAllData() {
+    this.api.getAllAiData(this.currentPage, this.limit).subscribe({
+      next: (res: any) => {
+        console.log(res);
+
+        // ✅ paginated data
+        this.aiUserData = res.data;
+
+        // ✅ pagination info
+        this.totalPages = res.pages;
+
+        // ✅ counts from backend (IMPORTANT 🔥)
+        this.articlecount = res.counts.articlecount;
+        this.blogTitlecount = res.counts.blogTitlecount;
+        this.imagegeneratedCount = res.counts.imagegeneratedCount;
+        this.bgremoveCount = res.counts.bgremoveCount;
+        console.log(this.articlecount);
+        console.log(this.imagegeneratedCount);
+        
+        
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+  // 🔥 change page
+  changePage(page: number) {
+    if (page < 1 || page > this.totalPages) return;
+
+    this.currentPage = page;
+    this.getAllData();
+  }
+
+  // navigation
+  naviagetToArticle() {
+    this.router.navigateByUrl('/ai/article');
+  }
+
+  naviagetToBlogTitle() {
+    this.router.navigateByUrl('/ai/blog-title');
+  }
+
+  naviagetToImageGenerator() {
+    this.router.navigateByUrl('/ai/image-generate');
+  }
+
+  naviagetToRemoveBg() {
+    this.router.navigateByUrl('/ai/remove-background');
+  }
 }

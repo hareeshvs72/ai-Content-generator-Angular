@@ -56,7 +56,7 @@ appendToken() {
 
   imageGeneratorAPI(reqBody: any) {
     return this.http.post(
-      `${this.serverUrl}/ai/textoimage`,
+      `${this.serverUrl}/ai/image-generate`,
       reqBody,
       this.appendToken()
     );
@@ -70,9 +70,9 @@ appendToken() {
     );
   }
 
-    getAllAiData() {
+    getAllAiData(page:number,limit:number) {
     return this.http.get(
-      `${this.serverUrl}/ai/get-allData`,
+      `${this.serverUrl}/ai/data?page=${page}&limit=${limit}`,
       this.appendToken()
     );
   }

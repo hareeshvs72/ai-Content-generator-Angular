@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
@@ -12,16 +12,19 @@ import { CommonModule } from '@angular/common';
 export class Layout {
   router = inject(Router)
   isSidebarOpen = false;
+  platformid = inject(PLATFORM_ID)
   user:any;
   ngOnInit() {
-
-    const storedUser = sessionStorage.getItem("users");
+  if(isPlatformBrowser(this.platformid)){
+   const storedUser = sessionStorage.getItem("users");
 console.log(storedUser);
 
     if (storedUser) {
       this.user = JSON.parse(storedUser);
     }
 
+  }
+ 
   }
 
   logOut(){

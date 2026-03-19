@@ -64,8 +64,8 @@ this.api.removeBackgroundApi(reqBody).subscribe({
     this.loader = false
   },
   error:(reason:any)=>{
-    console.log(reason.error);
-    alert(reason.error)
+    console.log(reason.error.message);
+    alert(reason.error.message)
     this.loader = false
   }
 })

@@ -93,6 +93,27 @@
             Removed person from image
           </li>
         </ul>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+
+  <button 
+    class="btn btn-outline-secondary btn-sm"
+    (click)="changePage(currentPage - 1)"
+    [disabled]="currentPage === 1">
+    Prev
+  </button>
+
+  <span class="text-muted">
+    Page {{currentPage}} of {{totalPages}}
+  </span>
+
+  <button 
+    class="btn btn-outline-primary btn-sm"
+    (click)="changePage(currentPage + 1)"
+    [disabled]="currentPage === totalPages">
+    Next
+  </button>
+
+</div>
       </div>
     </div>
 
