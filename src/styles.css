@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+/* ✅ Success Toast */
+.success-snackbar {
+  background: #4caf50 !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* ✅ Error Toast */
+.error-snackbar {
+  background: #f44336 !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* ✅ Warning Toast */
+.warning-snackbar {
+  background: #ff9800 !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* ✅ Info Toast */
+.info-snackbar {
+  background: #2196f3 !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 8px;
+}

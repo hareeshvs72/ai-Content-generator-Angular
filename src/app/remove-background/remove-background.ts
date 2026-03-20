@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Api } from '../service/api';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-remove-background',
@@ -17,13 +18,23 @@ export class RemoveBackground {
   preview:any = ""
   backgroundRemoved:any = ""
 
+
+    constructor(private snackBar: MatSnackBar) { }
+
+
 getUploadFile(event: Event) {
   console.log('CHANGE EVENT FIRED');
 
   const input = event.target as HTMLInputElement;
 
   if (!input.files || input.files.length === 0) {
-    alert("please add a Image")
+    // alert("please add a Image")
+       this.snackBar.open('please add a Image !', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
   }
   else{
 
@@ -65,7 +76,13 @@ this.api.removeBackgroundApi(reqBody).subscribe({
   },
   error:(reason:any)=>{
     console.log(reason.error.message);
-    alert(reason.error.message)
+    // alert(reason.error.message)
+       this.snackBar.open(reason.error.message, 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
     this.loader = false
   }
 })

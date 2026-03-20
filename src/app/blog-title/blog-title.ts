@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Api } from '../service/api';
 import { FormsModule } from "@angular/forms";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-blog-title',
@@ -19,6 +20,7 @@ export class BlogTitle {
 lengthSelect:number | null = null
 api = inject(Api)
 
+  constructor(private snackBar: MatSnackBar) { }
 
 selectedLength(item:any){
   this.lengthSelect = item
@@ -45,7 +47,13 @@ blogTitle(){
    },
    error:(reason:any)=>{
     console.log(reason.error.error);
-    alert(reason.error.error)
+    // alert(reason.error.error)
+     this.snackBar.open(reason.error.error + "!" , 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
         this.loader = false    
    }
   })

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { Api } from '../service/api';
-import { error } from 'console';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -24,6 +24,9 @@ article:any = ""
 loader:boolean = false
 lengthSelect:number | null = null
 api = inject(Api)
+
+  constructor(private snackBar: MatSnackBar) { }
+
 ngOnInit(){
 
   
@@ -53,7 +56,13 @@ generateArticle(){
    },
    error:(reason:any)=>{
     console.log(reason.error.error);
-    alert(reason.error.error)
+    // alert(reason.error.error)
+       this.snackBar.open(reason.error.error +"!", 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
         this.loader = false    
    }
   })

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { Api } from '../service/api';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-generate-image',
@@ -27,6 +28,9 @@ prompt:string = ""
  loader:boolean = false
 style:any = ""
 generatedImage:any = ""
+
+  constructor(private snackBar: MatSnackBar) { }
+
 selectedLength(item:any){
   this.lengthSelect = item
   this.style = item
@@ -47,6 +51,12 @@ this.api.imageGeneratorAPI(reqBody).subscribe({
   },
   error:(reason:any)=>{
     console.log(reason.error);
+       this.snackBar.open(reason.error.message, 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
     this.loader = false
   }
 })

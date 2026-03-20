@@ -3,7 +3,9 @@ import { Router, RouterLink } from "@angular/router";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Api } from '../service/api';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
+  standalone: true,
   selector: 'app-auth',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './auth.html',
@@ -20,11 +22,12 @@ export class Auth {
     password: ["", [Validators.required, Validators.pattern('[a-zA-Z0-9]*')]]
   })
 
-   loginForm: FormGroup = this.fb.group({
+  loginForm: FormGroup = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.pattern('[a-zA-Z0-9]*')]]
   })
 
+  constructor(private snackBar: MatSnackBar) { }
 
   registerUser() {
     // console.log(this.registeForm.get('username')?.valid);
@@ -36,14 +39,25 @@ export class Auth {
       try {
         this.api.registerUser({ username, email, password }).subscribe({
           next: ((res: any) => {
-            alert("register success fully")
+            // alert("register success fully")
+                this.snackBar.open('register success fully!', 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              panelClass: ['success-snackbar']
+            });
             console.log(res);
             this.registeForm.reset()
 
           }),
           error: ((reason: any) => {
             console.log(reason);
-            alert(reason.error)
+            // alert(reason.error)
+            this.snackBar.open(reason.error, 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              horizontalPosition: 'right',
+              panelClass: ['error-snackbar']
+            });
 
           })
         })
@@ -54,40 +68,61 @@ export class Auth {
       }
     }
     else {
-      alert("please Chek the form")
+      // alert("please Chek the form")
+      this.snackBar.open('please Check the form!', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
     }
 
   }
 
-  loginUSer(){
-    alert("login click")
+  loginUSer() {
 
-   if( this.loginForm.valid){
-     const email = this.loginForm.value.email
-          const password = this.loginForm.value.password
-          try {
-             this.api.loginUserApi({email,password}).subscribe({
-              next:((res:any)=>{
-                console.log(res);
-                const user = sessionStorage.setItem("users",JSON.stringify(res.user))
-                 const token = sessionStorage.setItem("token",JSON.stringify(res.token))
-                alert("Login Success Fully")
-                this.router.navigateByUrl('/ai/dashboard')  
-              }),
-              error:((reason:any)=>{
-                alert(reason.error)
-              })
-             })
+    if (this.loginForm.valid) {
+      const email = this.loginForm.value.email
+      const password = this.loginForm.value.password
+      try {
+        this.api.loginUserApi({ email, password }).subscribe({
+          next: ((res: any) => {
+            console.log(res);
+            const user = sessionStorage.setItem("users", JSON.stringify(res.user))
+            const token = sessionStorage.setItem("token", JSON.stringify(res.token))
+            this.snackBar.open('Login SuccessFully', 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              panelClass: ['success-snackbar']
+            });
+            this.router.navigateByUrl('/ai/dashboard')
+          }),
+          error: ((reason: any) => {
+            // alert(reason.error)
+            this.snackBar.open(reason.error, 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              horizontalPosition: 'right',
+              panelClass: ['error-snackbar']
+            });
+          })
+        })
 
-          } catch (error) {
-            console.log(error);
-            
-          }
+      } catch (error) {
+        console.log(error);
 
-   }
-   else{
-    alert("invalid Form")
-   }
+      }
+
+    }
+    else {
+      // alert("invalid Form")
+      this.snackBar.open('invalid Form!', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['info-snackbar']
+      });
+    }
   }
 
   goSignIn() {
