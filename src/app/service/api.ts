@@ -8,7 +8,7 @@ import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 export class Api {
 
   private http = inject(HttpClient);
-  private serverUrl = 'http://localhost:5000';
+  private serverUrl = 'https://ai-content-generator-server-ochu.onrender.com';
   platformid = inject(PLATFORM_ID)
 
 
